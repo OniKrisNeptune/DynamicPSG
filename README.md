@@ -74,6 +74,8 @@ values | list or dict | values
 ## set()
 *added in v0.1.0*
 
+Changes active layout to the specified
+
 ```
 dyndow.set(
     name
