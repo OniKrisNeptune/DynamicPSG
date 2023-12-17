@@ -33,5 +33,7 @@ class dyndow:
     def win(self):
         return self.window
 
-    def layout(self):
-        return self.win()[self.current]
+    def layout(self, index = None):
+        if index is None:
+            index = self.current
+        return self.win()[index]
