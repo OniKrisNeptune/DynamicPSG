@@ -74,6 +74,8 @@ values | list or dict | values
 ## set()
 *added in v0.1.0*
 
+Changes active layout to the specified
+
 ```
 dyndow.set(
     name
@@ -91,10 +93,44 @@ Simular/replaces `sg.Window()`
 ```
 dyndow.start(
     title = ""
-    start = 0
+    start = None
     )
 ```
 Name | Type | Meaning | Default
 --- | --- | --- | ---
 title | str | Title of the window. | Empty
 start | str | Name of the layout to start with. | First layout entered in \_\_init__
+
+## win()
+*added in v0.2.0*
+
+if, for whatever reason you need to access psg's window object, use this. 
+The contents of the window are columns that the library manages, not your layout.
+To access your layout, use `dyndow.layout()`
+
+```
+dyndow.win()
+```
+### return
+Name | Type | Meaning
+--- | --- | ---
+layout | sg.Window() | the gui window object
+
+## layout()
+*added in v0.2.0*
+
+returns the layout being used at the moment.
+
+```
+dyndow.layout(
+    index = None
+    )
+```
+Name | Type | Meaning | Default
+--- | --- | --- | ---
+index | str | Name of layout to return | Currently active layout
+
+### return
+Name | Type | Meaning
+--- | --- | ---
+layout | sg.Column | Your layout, stored in a column
